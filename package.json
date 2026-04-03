@@ -1,0 +1,57 @@
+{
+  "name": "polylingo",
+  "version": "0.1.0",
+  "description": "Official Node.js SDK for the PolyLingo translation API",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "translation",
+    "i18n",
+    "polylingo",
+    "markdown",
+    "json",
+    "html"
+  ],
+  "author": "PolyLingo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UsePolyLingo/polylingo-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UsePolyLingo/polylingo-node/issues"
+  },
+  "homepage": "https://usepolylingo.com",
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
