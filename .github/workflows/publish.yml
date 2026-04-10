@@ -30,7 +30,7 @@ jobs:
 
       - run: npm run build
 
-      - name: Verify npm user (must be a maintainer of package "polylingo" on npm)
+      - name: Verify npm authentication
         run: |
           npm config get registry
           npm whoami
