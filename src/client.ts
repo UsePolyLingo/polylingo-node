@@ -16,7 +16,7 @@ import type {
   UsageResponse,
 } from './types.js'
 
-const DEFAULT_BASE_URL = 'https://api.polylingo.io/v1'
+const DEFAULT_BASE_URL = 'https://api.usepolylingo.com/v1'
 
 export class PolyLingo {
   private readonly apiKey: string

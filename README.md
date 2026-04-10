@@ -17,7 +17,7 @@ import PolyLingo from 'polylingo'
 
 const client = new PolyLingo({
   apiKey: process.env.POLYLINGO_API_KEY!,
-  // baseURL: 'https://api.polylingo.io/v1',
+  // baseURL: 'https://api.usepolylingo.com/v1',
   // timeout: 120_000,
 })
 

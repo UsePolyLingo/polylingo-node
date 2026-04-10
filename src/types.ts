@@ -4,7 +4,7 @@ export type ModelTier = 'standard' | 'advanced'
 export interface PolyLingoOptions {
   /** PolyLingo API key (required). */
   apiKey: string
-  /** API base URL, e.g. `https://api.polylingo.io/v1`. */
+  /** API base URL, e.g. `https://api.usepolylingo.com/v1`. */
   baseURL?: string
   /** Request timeout in milliseconds. */
   timeout?: number
