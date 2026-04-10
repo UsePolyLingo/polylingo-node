@@ -49,6 +49,10 @@
     "url": "https://github.com/UsePolyLingo/polylingo-node/issues"
   },
   "homepage": "https://usepolylingo.com",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",

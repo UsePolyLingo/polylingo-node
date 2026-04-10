@@ -14,13 +14,27 @@ jobs:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          registry-url: 'https://registry.npmjs.org'
+          # Trailing slash avoids subtle npm auth issues with the registry URL.
+          registry-url: 'https://registry.npmjs.org/'
           cache: npm
+          cache-dependency-path: package-lock.json
           always-auth: true
           token: ${{ secrets.NPM_TOKEN }}
+
       - run: npm ci
+
       - run: npm run build
-      - run: npm publish --access public
+
+      - name: Verify npm user (must be a maintainer of package "polylingo" on npm)
+        run: |
+          npm config get registry
+          npm whoami
+
+      - name: Publish to npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

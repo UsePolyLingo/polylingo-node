@@ -54,6 +54,10 @@ console.log(r.translations.es)
 
 [github.com/UsePolyLingo/polylingo-node](https://github.com/UsePolyLingo/polylingo-node)
 
+## Publishing from GitHub Actions
+
+The workflow expects a repository secret **`NPM_TOKEN`**. If `npm publish` fails with **404** on `PUT …/polylingo`, npm is almost always rejecting the token: the account returned by `npm whoami` in the job logs must be a **maintainer** of the [`polylingo`](https://www.npmjs.com/package/polylingo/access) package, and the token must allow **publish** (use an **Automation** classic token, or a **granular** token with **Read and write** for that package).
+
 ## License
 
 MIT
